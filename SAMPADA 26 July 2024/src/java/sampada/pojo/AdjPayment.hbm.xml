@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 19, 2021 2:14:29 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.AdjPayment" table="ADJ_PAYMENT"  optimistic-lock="version">
+        <id name="uniqueId" type="big_decimal">
+            <column name="UNIQUE_ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="corporates" class="sampada.pojo.Corporates" fetch="select">
+            <column name="CORP_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="adjustAmt" type="big_decimal">
+            <column name="ADJUST_AMT" precision="30" />
+        </property>
+        <property name="corpName" type="string">
+            <column name="CORP_NAME" length="25" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7" />
+        </property>
+        <property name="entryTime" type="timestamp">
+            <column name="ENTRY_TIME" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="500" />
+        </property>
+        <property name="checkerDate" type="date">
+            <column name="CHECKER_DATE" length="7" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="20" />
+        </property>
+        <property name="totalPay" type="big_decimal">
+            <column name="TOTAL_PAY" precision="30" />
+        </property>
+        <property name="totalRec" type="big_decimal">
+            <column name="TOTAL_REC" precision="30" />
+        </property>
+        <set name="adjMappings" table="ADJ_MAPPING" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ADJPAYMENT_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.AdjMapping" />
+        </set>
+    </class>
+</hibernate-mapping>

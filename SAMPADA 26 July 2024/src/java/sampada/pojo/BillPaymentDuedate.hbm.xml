@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.BillPaymentDuedate" table="BILL_PAYMENT_DUEDATE">
+        <id name="slno" type="big_decimal">
+            <column name="SLNO" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="billtype" type="string">
+            <column name="BILLTYPE" length="50" />
+        </property>
+        <property name="noofdays" type="big_decimal">
+            <column name="NOOFDAYS" precision="22" scale="0" />
+        </property>
+        <property name="category" type="string">
+            <column name="CATEGORY" length="10" />
+        </property>
+        <property name="fromDate" type="date">
+            <column name="FROM_DATE" length="7"/>
+        </property>
+        <property name="toDate" type="date">
+            <column name="TO0_DATE" length="7"/>
+        </property>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7"/>
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="20" />
+        </property>
+        <property name="checkerDate" type="date">
+            <column name="CHECKER_DATE" length="7"/>
+        </property>
+          
+    </class>
+</hibernate-mapping>

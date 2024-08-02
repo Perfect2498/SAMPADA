@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23 Aug, 2023 2:43:10 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.TempBillEntityTrasM" table="TEMP_BILL_ENTITY_TRAS_M"  optimistic-lock="version">
+        <id name="uniqueId" type="big_decimal">
+            <column name="UNIQUE_ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="weekId" type="big_decimal">
+            <column name="WEEK_ID" precision="22" scale="0" />
+        </property>
+        <many-to-one name="corporates" class="sampada.pojo.Corporates" fetch="select">
+            <column name="CORPORATE_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="entites" class="sampada.pojo.Entites" fetch="select">
+            <column name="ENTITY_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="trasUpClearedAhead" type="big_decimal">
+            <column name="TRAS_UP_CLEARED_AHEAD" precision="20" />
+        </property>
+        <property name="trasUpScheduledAhead" type="big_decimal">
+            <column name="TRAS_UP_SCHEDULED_AHEAD" precision="20" />
+        </property>
+        <property name="trasUpEnergyChargesAhead" type="big_decimal">
+            <column name="TRAS_UP_ENERGY_CHARGES_AHEAD" precision="20" />
+        </property>
+        <property name="trasUpComChargesAhead" type="big_decimal">
+            <column name="TRAS_UP_COM_CHARGES_AHEAD" precision="20" />
+        </property>
+        <property name="trasUpClearedReal" type="big_decimal">
+            <column name="TRAS_UP_CLEARED_REAL" precision="20" />
+        </property>
+        <property name="trasUpScheduledReal" type="big_decimal">
+            <column name="TRAS_UP_SCHEDULED_REAL" precision="20" />
+        </property>
+        <property name="trasUpEnergyChargesReal" type="big_decimal">
+            <column name="TRAS_UP_ENERGY_CHARGES_REAL" precision="20" />
+        </property>
+        <property name="trasUpComChargesReal" type="big_decimal">
+            <column name="TRAS_UP_COM_CHARGES_REAL" precision="20" />
+        </property>
+        <property name="trasUpTotalCharges" type="big_decimal">
+            <column name="TRAS_UP_TOTAL_CHARGES" precision="20" />
+        </property>
+        <property name="trasDownScheduledAhead" type="big_decimal">
+            <column name="TRAS_DOWN_SCHEDULED_AHEAD" precision="20" />
+        </property>
+        <property name="trasDownEnergyChargesAhead" type="big_decimal">
+            <column name="TRAS_DOWN_ENERGY_CHARGES_AHEAD" precision="20" />
+        </property>
+        <property name="trasDownScheduledReal" type="big_decimal">
+            <column name="TRAS_DOWN_SCHEDULED_REAL" precision="20" />
+        </property>
+        <property name="trasDownEnergyChargesReal" type="big_decimal">
+            <column name="TRAS_DOWN_ENERGY_CHARGES_REAL" precision="20" />
+        </property>
+        <property name="netTras" type="big_decimal">
+            <column name="NET_TRAS" precision="20" />
+        </property>
+        <property name="billYear" type="big_decimal">
+            <column name="BILL_YEAR" precision="22" scale="0" />
+        </property>
+        <property name="revisionNo" type="big_decimal">
+            <column name="REVISION_NO" precision="22" scale="0" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="500" />
+        </property>
+        <property name="wrNetTras" type="big_decimal">
+            <column name="WR_NET_TRAS" precision="20" />
+        </property>
+        <property name="billStatus" type="string">
+            <column name="BILL_STATUS" length="20" />
+        </property>
+        <property name="prevWrNetTras" type="big_decimal">
+            <column name="PREV_WR_NET_TRAS" precision="20" />
+        </property>
+    </class>
+</hibernate-mapping>

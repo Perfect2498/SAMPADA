@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.RevertTempDisbInterest" table="REVERT_TEMP_DISB_INTEREST">
+        <id name="slno" type="big_decimal">
+            <column name="SLNO" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="tempDisbInterestDetails" class="sampada.pojo.TempDisbInterestDetails" fetch="select">
+            <column name="INTEREST_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7" />
+        </property>
+        <property name="checkerStatus" type="string">
+            <column name="CHECKER_STATUS" length="20" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

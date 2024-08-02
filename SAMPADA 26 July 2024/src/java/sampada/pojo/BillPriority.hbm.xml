@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.BillPriority" table="BILL_PRIORITY">
+        <id name="slno" type="big_decimal">
+            <column name="SLNO" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="priorityname" type="string">
+            <column name="PRIORITYNAME" length="50" />
+        </property>
+        <property name="orderby" type="big_decimal">
+            <column name="ORDERBY" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

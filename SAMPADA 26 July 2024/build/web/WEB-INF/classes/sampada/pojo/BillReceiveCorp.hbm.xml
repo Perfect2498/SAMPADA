@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.BillReceiveCorp" table="BILL_RECEIVE_CORP">
+        <id name="uniqueId" type="big_decimal">
+            <column name="UNIQUE_ID" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="corporates" class="sampada.pojo.Corporates" fetch="select">
+            <column name="CORPORATE_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="weekId" type="big_decimal">
+            <column name="WEEK_ID" precision="22" scale="0" />
+        </property>
+        <property name="toalnet" type="big_decimal">
+            <column name="TOALNET" precision="20" />
+        </property>
+        <property name="disburseStatus" type="string">
+            <column name="DISBURSE_STATUS" length="20" />
+        </property>
+        <property name="disburseAmount" type="big_decimal">
+            <column name="DISBURSE_AMOUNT" precision="20" />
+        </property>
+        <property name="pendingAmount" type="big_decimal">
+            <column name="PENDING_AMOUNT" precision="20" />
+        </property>
+        <property name="revisedrefund" type="big_decimal">
+            <column name="REVISEDREFUND" precision="20" />
+        </property>
+        <property name="revisedpaybale" type="big_decimal">
+            <column name="REVISEDPAYBALE" precision="20" />
+        </property>
+        <property name="billingDate" type="date">
+            <column name="BILLING_DATE" length="7" />
+        </property>
+        <property name="billYear" type="big_decimal">
+            <column name="BILL_YEAR" precision="22" scale="0" />
+        </property>
+        <property name="revisionNo" type="big_decimal">
+            <column name="REVISION_NO" precision="22" scale="0" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="250" />
+        </property>
+        <property name="adjustmentflag" type="string">
+            <column name="ADJUSTMENTFLAG" length="10" />
+        </property>
+        <property name="adjustmentAmount" type="big_decimal">
+            <column name="ADJUSTMENT_AMOUNT" precision="20" />
+        </property>
+        <property name="billType" type="string">
+            <column name="BILL_TYPE" length="20" />
+        </property>
+        <property name="billCategory" type="string">
+            <column name="BILL_CATEGORY" length="20" />
+        </property>
+        <property name="billPriority" type="string">
+            <column name="BILL_PRIORITY" length="10" />
+        </property>
+        <property name="netDsm" type="big_decimal">
+            <column name="NET_DSM" precision="20" />
+        </property>
+        <property name="billDueDate" type="date">
+            <column name="BILL_DUE_DATE" length="7" />
+        </property>
+        <set name="tempPaymentDisbursements" table="TEMP_PAYMENT_DISBURSEMENT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="UNIQUE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempPaymentDisbursement" />
+        </set>
+        <set name="tempRefundBillCorps" table="TEMP_REFUND_BILL_CORP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="BILLRECV_UNIQUEID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempRefundBillCorp" />
+        </set>
+        <set name="paymentDisbursements" table="PAYMENT_DISBURSEMENT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="UNIQUE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.PaymentDisbursement" />
+        </set>
+    </class>
+</hibernate-mapping>

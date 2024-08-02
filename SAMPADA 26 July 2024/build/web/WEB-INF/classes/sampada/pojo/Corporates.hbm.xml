@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.Corporates" table="CORPORATES">
+        <id name="corporateId" type="int">
+            <column name="CORPORATE_ID" precision="5" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="corporateName" type="string">
+            <column name="CORPORATE_NAME" length="50" />
+        </property>
+        <property name="sname" type="string">
+            <column name="SNAME" length="100" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" length="250" />
+        </property>
+        <property name="location" type="string">
+            <column name="LOCATION" length="100" />
+        </property>
+        <property name="state" type="string">
+            <column name="STATE" length="100" />
+        </property>
+        <property name="dsmContact" type="string">
+            <column name="DSM_CONTACT" length="100" />
+        </property>
+        <property name="rrasContact" type="string">
+            <column name="RRAS_CONTACT" length="100" />
+        </property>
+        <property name="congContact" type="string">
+            <column name="CONG_CONTACT" length="100" />
+        </property>
+        <property name="rectContact" type="string">
+            <column name="RECT_CONTACT" length="100" />
+        </property>
+        <property name="mobile" type="string">
+            <column name="MOBILE" length="20" />
+        </property>
+        <property name="office" type="string">
+            <column name="OFFICE" length="20" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7" />
+        </property>
+        <property name="corporateType" type="string">
+            <column name="CORPORATE_TYPE" length="10" />
+        </property>
+        <property name="validity" type="string">
+            <column name="VALIDITY" length="3" />
+        </property>
+        <property name="blockRemarks" type="string">
+            <column name="BLOCK_REMARKS" length="200" />
+        </property>
+        <property name="subAccountNumber" type="string">
+            <column name="SUB_ACCOUNT_NUMBER" length="50" />
+        </property>
+        <property name="outStanding" type="big_decimal">
+            <column name="OUT_STANDING" precision="30" />
+        </property>
+        <property name="partyCode" type="string">
+            <column name="PARTY_CODE" length="20" />
+        </property>
+        <property name="bankAccName" type="string">
+            <column name="BANK_ACC_NAME" length="100" />
+        </property>
+        <set name="billEntityFrases" table="BILL_ENTITY_FRAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.BillEntityFras" />
+        </set>
+        <set name="interestDetailses" table="INTEREST_DETAILS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.InterestDetails" />
+        </set>
+        <set name="tempDisbInterestDetailses" table="TEMP_DISB_INTEREST_DETAILS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempDisbInterestDetails" />
+        </set>
+        <set name="billPayableCorps" table="BILL_PAYABLE_CORP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.BillPayableCorp" />
+        </set>
+        <set name="bankStatements" table="BANK_STATEMENT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.BankStatement" />
+        </set>
+        <set name="userDetailses" table="USER_DETAILS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="5" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.UserDetails" />
+        </set>
+        <set name="tempBillPayableEntityDsms" table="TEMP_BILL_PAYABLE_ENTITY_DSM" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempBillPayableEntityDsm" />
+        </set>
+        <set name="tempBillEntityFrases" table="TEMP_BILL_ENTITY_FRAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempBillEntityFras" />
+        </set>
+        <set name="entiteses" table="ENTITES" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.Entites" />
+        </set>
+        <set name="tempInterestDetailses" table="TEMP_INTEREST_DETAILS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempInterestDetails" />
+        </set>
+        <set name="disbursedInterestDetailses" table="DISBURSED_INTEREST_DETAILS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.DisbursedInterestDetails" />
+        </set>
+        <set name="tempBillReceiveCorps" table="TEMP_BILL_RECEIVE_CORP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempBillReceiveCorp" />
+        </set>
+        <set name="billReceiveCorps" table="BILL_RECEIVE_CORP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.BillReceiveCorp" />
+        </set>
+        <set name="tempBillPayableEntityRrases" table="TEMP_BILL_PAYABLE_ENTITY_RRAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempBillPayableEntityRras" />
+        </set>
+        <set name="billReceiveEntityDsms" table="BILL_RECEIVE_ENTITY_DSM" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.BillReceiveEntityDsm" />
+        </set>
+        <set name="billPayableEntityRrases" table="BILL_PAYABLE_ENTITY_RRAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.BillPayableEntityRras" />
+        </set>
+        <set name="mappingBillBanks" table="MAPPING_BILL_BANK" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.MappingBillBank" />
+        </set>
+        <set name="tempBillPayableCorps" table="TEMP_BILL_PAYABLE_CORP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempBillPayableCorp" />
+        </set>
+        <set name="tempBillReceiveEntityDsms" table="TEMP_BILL_RECEIVE_ENTITY_DSM" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempBillReceiveEntityDsm" />
+        </set>
+        <set name="tempBillReceiveEntityRrases" table="TEMP_BILL_RECEIVE_ENTITY_RRAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempBillReceiveEntityRras" />
+        </set>
+        <set name="paymentDisbursements" table="PAYMENT_DISBURSEMENT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.PaymentDisbursement" />
+        </set>
+        <set name="tempMappingBillBanks" table="TEMP_MAPPING_BILL_BANK" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempMappingBillBank" />
+        </set>
+        <set name="tempRefundBillCorps" table="TEMP_REFUND_BILL_CORP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempRefundBillCorp" />
+        </set>
+        <set name="billPayableEntityDsms" table="BILL_PAYABLE_ENTITY_DSM" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.BillPayableEntityDsm" />
+        </set>
+        <set name="billReceiveEntityRrases" table="BILL_RECEIVE_ENTITY_RRAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.BillReceiveEntityRras" />
+        </set>
+        <set name="tempPaymentDisbursements" table="TEMP_PAYMENT_DISBURSEMENT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempPaymentDisbursement" />
+        </set>
+        <set name="billEntityAgcs" table="BILL_ENTITY_AGC" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.BillEntityAgc" />
+        </set>
+        <set name="tempBillEntityAgcs" table="TEMP_BILL_ENTITY_AGC" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempBillEntityAgc" />
+        </set>
+        <set name="defaultLocDetailses" table="DEFAULT_LOC_DETAILS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CORPORATE_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.DefaultLocDetails" />
+        </set>
+    </class>
+</hibernate-mapping>

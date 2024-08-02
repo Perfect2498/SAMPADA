@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.BankStatement" table="BANK_STATEMENT">
+        <id name="stmtId" type="big_decimal">
+            <column name="STMT_ID" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="corporates" class="sampada.pojo.Corporates" fetch="select">
+            <column name="CORPORATE_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="userDetails" class="sampada.pojo.UserDetails" fetch="select">
+            <column name="LOGIN_ID" length="20" />
+        </many-to-one>
+        <property name="stmtFromdate" type="date">
+            <column name="STMT_FROMDATE" length="7" />
+        </property>
+        <property name="stmtTodate" type="date">
+            <column name="STMT_TODATE" length="7" />
+        </property>
+        <property name="amountDate" type="date">
+            <column name="AMOUNT_DATE" length="7" />
+        </property>
+        <property name="amountTime" type="string">
+            <column name="AMOUNT_TIME" length="20" />
+        </property>
+        <property name="paidAmount" type="big_decimal">
+            <column name="PAID_AMOUNT" precision="20" />
+        </property>
+        <property name="receiptNumber" type="string">
+            <column name="RECEIPT_NUMBER" length="500" />
+        </property>
+        <property name="creditDebitFlag" type="string">
+            <column name="CREDIT_DEBIT_FLAG" length="10" />
+        </property>
+        <property name="transactionType" type="string">
+            <column name="TRANSACTION_TYPE" length="10" />
+        </property>
+        <property name="openBalance" type="big_decimal">
+            <column name="OPEN_BALANCE" precision="20" />
+        </property>
+        <property name="mainBalance" type="big_decimal">
+            <column name="MAIN_BALANCE" precision="20" />
+        </property>
+        <property name="mappedAmount" type="big_decimal">
+            <column name="MAPPED_AMOUNT" precision="20" />
+        </property>
+        <property name="mappedBalance" type="big_decimal">
+            <column name="MAPPED_BALANCE" precision="20" />
+        </property>
+        <property name="mappedStatus" type="string">
+            <column name="MAPPED_STATUS" length="30" />
+        </property>
+        <property name="stmtStatus" type="string">
+            <column name="STMT_STATUS" length="10" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="500" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7" />
+        </property>
+        <property name="entryDesc" type="string">
+            <column name="ENTRY_DESC" length="500" />
+        </property>
+        <property name="poolBal" type="big_decimal">
+            <column name="POOL_BAL" precision="30" />
+        </property>
+        <property name="reconFlag" type="string">
+            <column name="RECON_FLAG" length="10" />
+        </property>
+        <property name="disburseType" type="string">
+            <column name="disburse_type" length="10" />
+        </property>
+        <property name="disburseId" type="big_decimal">
+            <column name="DISBURSE_ID" precision="20" />
+        </property>
+        <property name="entryTime" type="timestamp">
+            <column name="ENTRY_TIME" />
+        </property>
+        <set name="tempMappingBillBanks" table="TEMP_MAPPING_BILL_BANK" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="BANK_STMTID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempMappingBillBank" />
+        </set>
+        <set name="mappingBillBanks" table="MAPPING_BILL_BANK" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="STMT_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.MappingBillBank" />
+        </set>
+        <set name="tempMapBankStatements" table="TEMP_MAP_BANK_STATEMENT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="BANK_STMTID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.TempMapBankStatement" />
+        </set>
+        <set name="mappingInterestBanks" table="MAPPING_INTEREST_BANK" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="BANK_STMTID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.MappingInterestBank" />
+        </set>
+        <set name="mappingRefundBanks" table="MAPPING_REFUND_BANK" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="BANK_STMTID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="sampada.pojo.MappingRefundBank" />
+        </set>
+    </class>
+</hibernate-mapping>

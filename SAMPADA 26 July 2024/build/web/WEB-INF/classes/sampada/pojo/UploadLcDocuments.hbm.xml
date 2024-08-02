@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.UploadLcDocuments" table="UPLOAD_LC_DOCUMENTS">
+        <id name="slno" type="big_decimal">
+            <column name="SLNO" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="letterOfCredit" class="sampada.pojo.LetterOfCredit" fetch="select">
+            <column name="LC_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="fileCatergory" type="string">
+            <column name="FILE_CATERGORY" length="20" />
+        </property>
+        <property name="userFilename" type="string">
+            <column name="USER_FILENAME" length="100" />
+        </property>
+        <property name="savedFilename" type="string">
+            <column name="SAVED_FILENAME" length="100" />
+        </property>
+        <property name="fileType" type="string">
+            <column name="FILE_TYPE" length="50" />
+        </property>
+        <property name="uploadDate" type="date">
+            <column name="UPLOAD_DATE" length="7" />
+        </property>
+        <property name="constituent" type="string">
+            <column name="CONSTITUENT" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

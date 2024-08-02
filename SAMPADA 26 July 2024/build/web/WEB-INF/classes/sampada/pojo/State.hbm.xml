@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.State" table="STATE">
+        <id name="stateId" type="long">
+            <column name="STATE_ID" precision="10" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="stateName" type="string">
+            <column name="STATE_NAME" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

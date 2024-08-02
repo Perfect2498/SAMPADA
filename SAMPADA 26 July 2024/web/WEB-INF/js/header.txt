@@ -1,0 +1,3 @@
+document.write('<center><img src="/images/CDAC.png" 
+  align="right"><br><h1><font color="navy"> 
+   CaMS</font></h1></center>')

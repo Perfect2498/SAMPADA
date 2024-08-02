@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+<!--        <property name="hibernate.connection.url">jdbc:oracle:thin:@10.2.100.62:1521:wrldc</property>
+        <property name="hibernate.connection.username">sampada</property>
+        <property name="hibernate.connection.password">sampada123</property>-->
+        <!--        <property name="hibernate.connection.url">jdbc:oracle:thin:@10.2.100.55:1521:ORCL</property>
+        <property name="hibernate.connection.username">sampada_test</property>
+        <property name="hibernate.connection.password">sampada_test1</property>    -->
+        
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@10.180.5.49:1521:XE</property>    
+        <property name="hibernate.connection.username">SAMPADA_WRLDC_TEST</property>       
+        <property name="hibernate.connection.password">po567trt</property>
+           
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <property name="hibernate.c3p0.min_size">10</property>
+
+        <property name="hibernate.c3p0.max_size">20</property>
+
+        <property name="hibernate.c3p0.acquire_increment">1</property>
+
+        <property name="hibernate.c3p0.idle_test_period">30</property>
+
+        <property name="hibernate.c3p0.max_statements">50</property>
+
+        <property name="hibernate.c3p0.timeout">1800</property>
+        
+        <mapping resource="sampada/pojo/InterestDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillPayableEntityRras.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillPayableEntityRras.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillPayableCorp.hbm.xml"/>
+        <mapping resource="sampada/pojo/UploadLcDocuments.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillReceiveCorp.hbm.xml"/>
+        <mapping resource="sampada/pojo/Status.hbm.xml"/>
+        <mapping resource="sampada/pojo/EntityType.hbm.xml"/>
+        <mapping resource="sampada/pojo/PoolAccountDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempMappingBillBank.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempPaymentDisbursement.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillRrasDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillDsmDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillFrasDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillEntityFras.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillEntityAgc.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillAgcDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempMapBankStatement.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillFrasDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/Entites.hbm.xml"/>
+        <mapping resource="sampada/pojo/ConstantsMaster.hbm.xml"/>
+        <mapping resource="sampada/pojo/BankStatement.hbm.xml"/>
+        <mapping resource="sampada/pojo/UserDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempDisbInterestDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillRrasDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/LetterOfCredit.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillEntityAgc.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillReceiveEntityDsm.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillPayableEntityDsm.hbm.xml"/>
+        <mapping resource="sampada/pojo/DisbursedInterestDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/PaymentDisbursement.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillPayableCorp.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillReceiveCorp.hbm.xml"/>
+        <mapping resource="sampada/pojo/MappingBillBank.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillPaymentDuedate.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillDsmDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillInterestRate.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillPayableEntityDsm.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillEntityFras.hbm.xml"/>
+        <mapping resource="sampada/pojo/Corporates.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillAgcDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/State.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillReceiveEntityDsm.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempRefundBillCorp.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillReceiveEntityRras.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillReceiveEntityRras.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillPriority.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempInterestDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/InterestPoolAccountDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/CsdfDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/MappingInterestBank.hbm.xml"/>
+        <mapping resource="sampada/pojo/MappingRefundBank.hbm.xml"/>
+        <mapping resource="sampada/pojo/DefaultLocDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/PaymentInterestDisbursement.hbm.xml"/>
+        <mapping resource="sampada/pojo/ReconciliationCorp.hbm.xml"/>
+        <mapping resource="sampada/pojo/OutstandingYearCorp.hbm.xml"/>
+        <mapping resource="sampada/pojo/MakerBankStatement.hbm.xml"/>
+        <mapping resource="sampada/pojo/RevertTempDisbInterest.hbm.xml"/>
+        <mapping resource="sampada/pojo/RevertTempInterestDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/DsnFileDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/DsnDisbursement.hbm.xml"/>
+        <mapping resource="sampada/pojo/DocumentSets.hbm.xml"/>
+        <mapping resource="sampada/pojo/Documents.hbm.xml"/>
+        <mapping resource="sampada/pojo/MiscDisbursement.hbm.xml"/>
+        <mapping resource="sampada/pojo/ToInterestDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/ToDisbursedInterestDetails.hbm.xml"/>
+    
+        <mapping resource="sampada/pojo/PoolToInt.hbm.xml"/>
+        <mapping resource="sampada/pojo/AdjMapping.hbm.xml"/>
+        <mapping resource="sampada/pojo/AdjPayment.hbm.xml"/>
+        <mapping resource="sampada/pojo/DynReconciliationCorp.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillEntitySras.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillSrasDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillSrasDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillEntitySras.hbm.xml"/>
+        
+        <mapping resource="sampada/pojo/AgcPoolAccountDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/RrasPoolAccountDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/AgcInterestPool.hbm.xml"/>
+        <mapping resource="sampada/pojo/RrasInterestPool.hbm.xml"/>
+        
+        <mapping resource="sampada/pojo/TempBillEntityTrasM.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillTrasMDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillTrasMDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillEntityTrasM.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillEntityTrasE.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillTrasEDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillTrasEDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillEntityTrasE.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillEntityTrasS.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillTrasSDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/TempBillTrasSDetails.hbm.xml"/>
+        <mapping resource="sampada/pojo/BillEntityTrasS.hbm.xml"/>
+        <mapping resource="sampada/pojo/PoolToPool.hbm.xml"/>
+
+
+
+    
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 19, 2021 2:14:29 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.AdjMapping" table="ADJ_MAPPING"  optimistic-lock="version">
+        <id name="slNo" type="big_decimal">
+            <column name="SL_NO" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="corporates" class="sampada.pojo.Corporates" fetch="select">
+            <column name="CORP_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="disbursedInterestDetails" class="sampada.pojo.DisbursedInterestDetails" fetch="select">
+            <column name="REC_INT_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="interestDetails" class="sampada.pojo.InterestDetails" fetch="select">
+            <column name="PAY_INT_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="billPayableCorpByPayId" class="sampada.pojo.BillPayableCorp" fetch="select">
+            <column name="PAY_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="billPayableCorpByPayRefId" class="sampada.pojo.BillPayableCorp" fetch="select">
+            <column name="PAY_REF_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="billReceiveCorpByRecvId" class="sampada.pojo.BillReceiveCorp" fetch="select">
+            <column name="RECV_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="billReceiveCorpByRecRefId" class="sampada.pojo.BillReceiveCorp" fetch="select">
+            <column name="REC_REF_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="adjPayment" class="sampada.pojo.AdjPayment" fetch="select">
+            <column name="ADJPAYMENT_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="corpName" type="string">
+            <column name="CORP_NAME" length="25" />
+        </property>
+        <property name="payBal" type="big_decimal">
+            <column name="PAY_BAL" precision="30" />
+        </property>
+        <property name="recBal" type="big_decimal">
+            <column name="REC_BAL" precision="30" />
+        </property>
+        <property name="payRefBal" type="big_decimal">
+            <column name="PAY_REF_BAL" precision="30" />
+        </property>
+        <property name="recRefBal" type="big_decimal">
+            <column name="REC_REF_BAL" precision="30" />
+        </property>
+        <property name="payIntBal" type="big_decimal">
+            <column name="PAY_INT_BAL" precision="30" />
+        </property>
+        <property name="recIntBal" type="big_decimal">
+            <column name="REC_INT_BAL" precision="30" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="20" />
+        </property>
+        <property name="adjustAmt" type="big_decimal">
+            <column name="ADJUST_AMT" precision="30" />
+        </property>
+    </class>
+</hibernate-mapping>

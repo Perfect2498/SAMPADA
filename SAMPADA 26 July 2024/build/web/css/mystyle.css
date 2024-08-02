@@ -1,0 +1,229 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 5, 2016, 10:49:03 AM
+    Author     : jagan
+*/
+ body {
+            font: 700 18px Aparajita ,Kaushan Script,Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            width:100%;
+          }
+
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+      #customers tr:hover {background-color: #ddd;}
+
+      #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4682B4;
+        color: white;
+      }
+
+        .billprocessbtn {              
+               background-color: #603311;
+               color: white;
+               padding: 16px 20px;
+               border: none;
+               cursor: pointer;
+               width: 150px;
+               opacity: 0.9;
+               font-family:  Kaushan Script ,sans-serif;
+             }
+
+             .billprocessbtn:hover {
+               /*opacity: 1;#3e8e41*/
+              color:yellow ; 
+             }
+          .active,.billprocessbtn:hover {
+            background-color: #603311;
+            color: white;
+        }   
+        
+          .payprocessbtn {              
+               background-color: #603311;
+               color: white;
+               padding: 16px 20px;
+               border: none;
+               cursor: pointer;
+               width: 150px;
+               opacity: 0.9;
+               font-family:  Kaushan Script ,sans-serif;
+             }
+
+             .payprocessbtn:hover {
+               /*opacity: 1;#3e8e41*/
+              color:#603311 ; 
+             }
+          .active,.payprocessbtn:hover {
+            background-color: #603311;
+            color: white;
+        }   
+        
+        
+          .btn {              
+               background-color: #603311;
+               color: white;
+               padding: 16px 20px;
+               border: none;
+               cursor: pointer;
+               width: 150px;
+               opacity: 0.9;
+               font-family:  Kaushan Script ,sans-serif;
+             }
+
+             .btn:hover {
+               /*opacity: 1;#3e8e41*/
+              color:yellow ; 
+             }
+            
+/*              .btn{
+               background-color: #603311;
+               color: #FBF1E9;
+           }*/
+           .dropbtn {
+               background-color: #603311;
+               color: #FBF1E9;
+               padding: 5px;
+               /*                padding: 10px 13px;*/
+               font-size: 12px;
+               border: none;
+               width:150px;
+               cursor: pointer;
+           }
+           .dropdown {
+               position: relative;
+               display: inline-block;
+           }
+           .dropdown-content {
+               display: none;
+               position: absolute;
+               background-color: #FFA812;
+               min-width: 150px;
+               min-height: 30px;
+               box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+               z-index: 1;
+           }
+           .dropdown-content a {
+               color: #603311;
+               text-decoration: none;
+               display: block;
+               height:35px;
+               background-color: #FFA812;
+           }
+           .dropdown-content a:hover {background-color: #603311;
+                                      color: #FFA812;}
+           .dropdown:hover .dropdown-content {
+               display: block;
+           }
+           .dropdown:hover .dropbtn {
+               background-color: #603311;
+           }
+           .active, .btn:hover {
+               color:#FBF1E9;
+               background-color: #603311;
+           }
+
+
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #CC9752;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}  
+
+        
+.customerTable table{ 
+                border: 2px solid DarkOrange;
+                border-radius: 13px; 
+                border-spacing: 0;
+            }
+             .customerTable  th { 
+                border: 2px solid  #964000;
+                padding: 10px; 
+                background-color: #964000;
+                color:white;
+                
+            }
+            .customerTable  td 
+            { 
+                border: 2px solid DarkOrange;
+                padding: 10px; 
+                background-color: #FBF2EA;
+              
+            }
+           .customerTable thead,tr, td {
+                color:#003366;
+            }
+            
+            .customerTable thead span.sort-icon {
+                display: inline-block;
+                padding-left: 5px;
+                width: 16px;
+                height: 16px;
+                color:wheat;
+            }
+            
+            
+            
+   .myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #00BFFF;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #00BFFF;
+	box-shadow:inset 0px 1px 0px 0px #00BFFF;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #603311), color-stop(1, #603311));
+	background:-moz-linear-gradient(top, #603311 5%, #603311 100%);
+	background:-webkit-linear-gradient(top, #603311 5%, #603311 100%);
+	background:-o-linear-gradient(top, #603311 5%, #603311 100%);
+	background:-ms-linear-gradient(top, #603311 5%, #603311 100%);
+	background:linear-gradient(to bottom, #603311 5%, #603311 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00EEEE', endColorstr='#00EEEE',GradientType=0);
+	background-color:#603311;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #54381e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Aparajita;
+	font-size:18px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #4d3534;
+        height: 50px;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4A777A), color-stop(1, #4A777A));
+	background:-moz-linear-gradient(top, #4A777A 5%, #4A777A 100%);
+	background:-webkit-linear-gradient(top, #4A777A 5%, #4A777A 100%);
+	background:-o-linear-gradient(top, #4A777A 5%, #4A777A 100%);
+	background:-ms-linear-gradient(top, #4A777A 5%, #4A777A 100%);
+	background:linear-gradient(to bottom, #4A777A 5%, #4A777A 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4A777A', endColorstr='#4A777A',GradientType=0);
+	background-color:#4A777A;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

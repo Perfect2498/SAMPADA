@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.MappingInterestBank" table="MAPPING_INTEREST_BANK">
+        <id name="slno" type="big_decimal">
+            <column name="SLNO" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="interestDetails" class="sampada.pojo.InterestDetails" fetch="select">
+            <column name="INTEREST_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="bankStatement" class="sampada.pojo.BankStatement" fetch="select">
+            <column name="BANK_STMTID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="mappedAmount" type="big_decimal">
+            <column name="MAPPED_AMOUNT" precision="20" />
+        </property>
+        <property name="pendingAmount" type="big_decimal">
+            <column name="PENDING_AMOUNT" precision="20" />
+        </property>
+        <property name="bankPendingAmount" type="big_decimal">
+            <column name="BANK_PENDING_AMOUNT" precision="30" />
+        </property>
+        <property name="checkerStatus" type="string">
+            <column name="CHECKER_STATUS" length="20" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="500" />
+        </property>
+        <property name="after_int_pool" type="big_decimal">
+            <column name="AFTER_INT_BAL" precision="20" />
+        </property>
+        <property name="entryTime" type="timestamp">
+            <column name="ENTRY_TIME" />
+        </property>
+        <property name="poolBal" type="big_decimal">
+            <column name="POOL_BAL" precision="30" />
+        </property>
+        <property name="poolAgcBal" type="big_decimal">
+            <column name="POOL_AGC_BAL" precision="30" />
+        </property>
+        <property name="poolRrasBal" type="big_decimal">
+            <column name="POOL_RRAS_BAL" precision="30" />
+        </property>
+        
+       
+        <property name="intAgcBal" type="big_decimal">
+            <column name="INT_AGC_BAL" precision="30" />
+        </property>
+        <property name="intRrasBal" type="big_decimal">
+            <column name="INT_RRAS_BAL" precision="30" />
+        </property>
+    </class>
+</hibernate-mapping>

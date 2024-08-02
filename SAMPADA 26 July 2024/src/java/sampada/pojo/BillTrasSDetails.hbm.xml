@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30 Aug, 2023 10:25:58 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.BillTrasSDetails" table="BILL_TRAS_S_DETAILS"  optimistic-lock="version">
+        <id name="uniqueId" type="big_decimal">
+            <column name="UNIQUE_ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="weekId" type="big_decimal">
+            <column name="WEEK_ID" precision="22" scale="0" />
+        </property>
+        <property name="weekFromdate" type="date">
+            <column name="WEEK_FROMDATE" length="7" />
+        </property>
+        <property name="weekTodate" type="date">
+            <column name="WEEK_TODATE" length="7" />
+        </property>
+        <property name="billingDate" type="date">
+            <column name="BILLING_DATE" length="7" />
+        </property>
+        <property name="billYear" type="big_decimal">
+            <column name="BILL_YEAR" precision="22" scale="0" />
+        </property>
+        <property name="billDueDate" type="date">
+            <column name="BILL_DUE_DATE" length="7" />
+        </property>
+        <property name="revisionNo" type="big_decimal">
+            <column name="REVISION_NO" precision="22" scale="0" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="500" />
+        </property>
+        <property name="billNo" type="string">
+            <column name="BILL_NO" length="200" />
+        </property>
+        <property name="billCategory" type="string">
+            <column name="BILL_CATEGORY" length="45" />
+        </property>
+        <property name="entryDate" type="timestamp">
+            <column name="ENTRY_DATE" />
+        </property>
+    </class>
+</hibernate-mapping>

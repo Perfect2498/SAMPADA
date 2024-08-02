@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.MappingBillBank" table="MAPPING_BILL_BANK">
+        <id name="uniqueId" type="big_decimal">
+            <column name="UNIQUE_ID" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="corporates" class="sampada.pojo.Corporates" fetch="select">
+            <column name="CORPORATE_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="userDetails" class="sampada.pojo.UserDetails" fetch="select">
+            <column name="LOGIN_ID" length="20" />
+        </many-to-one>
+        <many-to-one name="bankStatement" class="sampada.pojo.BankStatement" fetch="select">
+            <column name="STMT_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="billPayableCorp" class="sampada.pojo.BillPayableCorp" fetch="select">
+            <column name="UNIQUE_BILLPAY" precision="22" scale="0" />
+        </many-to-one>
+        <property name="weekId" type="big_decimal">
+            <column name="WEEK_ID" precision="22" scale="0" />
+        </property>
+        <property name="paymentCategory" type="string">
+            <column name="PAYMENT_CATEGORY" length="20" />
+        </property>
+        <property name="originalAmount" type="big_decimal">
+            <column name="ORIGINAL_AMOUNT" precision="20" />
+        </property>
+        <property name="mappedAmount" type="big_decimal">
+            <column name="MAPPED_AMOUNT" precision="20" />
+        </property>
+        <property name="pendingAmount" type="big_decimal">
+            <column name="PENDING_AMOUNT" precision="20" />
+        </property>
+        <property name="billType" type="string">
+            <column name="BILL_TYPE" length="20" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7" />
+        </property>
+        <property name="checkerStatus" type="string">
+            <column name="CHECKER_STATUS" length="20" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="500" />
+        </property>
+        <property name="pendingBankAmount" type="big_decimal">
+            <column name="PENDING_BANK_AMOUNT" precision="20" />
+        </property>
+        
+        <property name="entryTime" type="timestamp">
+            <column name="ENTRY_TIME" />
+        </property>
+       
+          <property name="poolBal" type="big_decimal">
+            <column name="POOL_BAL" precision="30" />
+        </property>
+        <property name="poolAgcBal" type="big_decimal">
+            <column name="POOL_AGC_BAL" precision="30" />
+        </property>
+        <property name="poolRrasBal" type="big_decimal">
+            <column name="POOL_RRAS_BAL" precision="30" />
+        </property>
+    </class>
+</hibernate-mapping>

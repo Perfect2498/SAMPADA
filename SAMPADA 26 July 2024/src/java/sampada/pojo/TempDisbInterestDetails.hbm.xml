@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.TempDisbInterestDetails" table="TEMP_DISB_INTEREST_DETAILS">
+        <id name="interestId" type="big_decimal">
+            <column name="INTEREST_ID" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="corporates" class="sampada.pojo.Corporates" fetch="select">
+            <column name="CORPORATE_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="weekId" type="big_decimal">
+            <column name="WEEK_ID" precision="22" scale="0" />
+        </property>
+        <property name="billingDate" type="date">
+            <column name="BILLING_DATE" length="7" />
+        </property>
+        <property name="billingDuedate" type="date">
+            <column name="BILLING_DUEDATE" length="7" />
+        </property>
+        <property name="billedAmount" type="big_decimal">
+            <column name="BILLED_AMOUNT" precision="30" />
+        </property>
+        <property name="disbursedAmount" type="big_decimal">
+            <column name="DISBURSED_AMOUNT" precision="30" />
+        </property>
+        <property name="disbursedDate" type="date">
+            <column name="DISBURSED_DATE" length="7" />
+        </property>
+        <property name="interestBilledamount" type="big_decimal">
+            <column name="INTEREST_BILLEDAMOUNT" precision="30" />
+        </property>
+        <property name="interestAmount" type="big_decimal">
+            <column name="INTEREST_AMOUNT" precision="30" />
+        </property>
+        <property name="interestPaidamount" type="big_decimal">
+            <column name="INTEREST_PAIDAMOUNT" precision="30" />
+        </property>
+        <property name="interestPendingamount" type="big_decimal">
+            <column name="INTEREST_PENDINGAMOUNT" precision="30" />
+        </property>
+        <property name="interestPaiddate" type="date">
+            <column name="INTEREST_PAIDDATE" length="7" />
+        </property>
+        <property name="billType" type="string">
+            <column name="BILL_TYPE" length="20" />
+        </property>
+        <property name="billCategory" type="string">
+            <column name="BILL_CATEGORY" length="20" />
+        </property>
+        <property name="revisionNo" type="big_decimal">
+            <column name="REVISION_NO" precision="22" scale="0" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7" />
+        </property>
+        <property name="checkerStatus" type="string">
+            <column name="CHECKER_STATUS" length="10" />
+        </property>
+        <property name="noofdays" type="big_decimal">
+            <column name="NOOFDAYS" precision="22" scale="0" />
+        </property>
+        <property name="billYear" type="big_decimal">
+            <column name="BILL_YEAR" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

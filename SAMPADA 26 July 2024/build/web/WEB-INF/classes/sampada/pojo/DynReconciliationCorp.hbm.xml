@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 13, 2021 6:04:33 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.DynReconciliationCorp" table="DYN_RECONCILIATION_CORP" >
+        <id name="slno" type="big_decimal">
+            <column name="SLNO" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="corporates" class="sampada.pojo.Corporates" fetch="select">
+            <column name="CORP_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="billEntryDate" type="date">
+            <column name="BILL_ENTRY_DATE" length="7" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7" />
+        </property>
+        <property name="billType" type="string">
+            <column name="BILL_TYPE" length="20" />
+        </property>
+        <property name="billingDate" type="date">
+            <column name="BILLING_DATE" length="7" />
+        </property>
+        <property name="revisionNo" type="big_decimal">
+            <column name="REVISION_NO" precision="22" scale="0" />
+        </property>
+        <property name="billYear" type="big_decimal">
+            <column name="BILL_YEAR" precision="22" scale="0" />
+        </property>
+        <property name="billDueDate" type="date">
+            <column name="BILL_DUE_DATE" length="7" />
+        </property>
+        <property name="payTotalnet" type="big_decimal">
+            <column name="PAY_TOTALNET" precision="30" />
+        </property>
+        <property name="recTotalnet" type="big_decimal">
+            <column name="REC_TOTALNET" precision="30" />
+        </property>
+        <property name="payFinalamount" type="big_decimal">
+            <column name="PAY_FINALAMOUNT" precision="30" />
+        </property>
+        <property name="recFinalamount" type="big_decimal">
+            <column name="REC_FINALAMOUNT" precision="30" />
+        </property>
+        <property name="payPendingamount" type="big_decimal">
+            <column name="PAY_PENDINGAMOUNT" precision="30" />
+        </property>
+        <property name="recPendingamount" type="big_decimal">
+            <column name="REC_PENDINGAMOUNT" precision="30" />
+        </property>
+        <property name="crDrDate" type="date">
+            <column name="CR_DR_DATE" length="7" />
+        </property>
+        <property name="crAmount" type="big_decimal">
+            <column name="CR_AMOUNT" precision="30" />
+        </property>
+        <property name="crSettledAmount" type="big_decimal">
+            <column name="CR_SETTLED_AMOUNT" precision="30" />
+        </property>
+        <property name="crAvailable" type="big_decimal">
+            <column name="CR_AVAILABLE" precision="30" />
+        </property>
+        <property name="drAmount" type="big_decimal">
+            <column name="DR_AMOUNT" precision="30" />
+        </property>
+        <property name="drSettledAmount" type="big_decimal">
+            <column name="DR_SETTLED_AMOUNT" precision="30" />
+        </property>
+        <property name="outstandingAmount" type="big_decimal">
+            <column name="OUTSTANDING_AMOUNT" precision="30" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="200" />
+        </property>
+        <property name="weekId" type="big_decimal">
+            <column name="WEEK_ID" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

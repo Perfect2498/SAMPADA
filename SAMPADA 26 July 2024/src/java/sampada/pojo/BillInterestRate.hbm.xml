@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.BillInterestRate" table="BILL_INTEREST_RATE">
+        <id name="slno" type="big_decimal">
+            <column name="SLNO" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="billtype" type="string">
+            <column name="BILLTYPE" length="50" />
+        </property>
+        <property name="interestRate" type="big_decimal">
+            <column name="INTEREST_RATE" precision="10" scale="5" />
+        </property>
+        <property name="noofduedays" type="big_decimal">
+            <column name="NOOFDUEDAYS" precision="22" scale="0" />
+        </property>
+        <property name="category" type="string">
+            <column name="CATEGORY" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

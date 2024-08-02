@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.MiscDisbursement" table="MISC_DISBURSEMENT">
+        <id name="uniqueId" type="big_decimal">
+            <column name="UNIQUE_ID" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="stmtId" type="big_decimal">
+            <column name="STMT_ID" precision="22" scale="0" />
+        </property>
+        <property name="refundAmt" type="big_decimal">
+            <column name="REFUND_AMT" precision="20" />
+        </property>
+        <property name="corpId" type="big_decimal">
+            <column name="CORP_ID" precision="22" scale="0" />
+        </property>
+        <property name="corpName" type="string">
+            <column name="CORP_NAME" length="25" />
+        </property>
+        <property name="documentSet" type="string">
+            <column name="DOCUMENT_SET" length="25" />
+        </property>
+        <property name="document" type="string">
+            <column name="DOCUMENT" length="25" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="20" />
+        </property>
+        <property name="makerDate" type="date">
+            <column name="MAKER_DATE" length="7" />
+        </property>
+        <property name="checkerDate" type="date">
+            <column name="CHECKER_DATE" length="7" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="500" />
+        </property>
+        <property name="amtCategory" type="string">
+            <column name="AMT_CATEGORY" length="20" />
+        </property>
+        <property name="entryTime" type="timestamp">
+            <column name="ENTRY_TIME" />
+        </property>
+        <property name="mainPoolBalance" type="big_decimal">
+            <column name="MAIN_POOL_BALANCE" precision="30" />
+        </property>
+    </class>
+</hibernate-mapping>

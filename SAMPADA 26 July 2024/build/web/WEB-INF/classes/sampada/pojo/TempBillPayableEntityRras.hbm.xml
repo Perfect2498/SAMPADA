@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.TempBillPayableEntityRras" table="TEMP_BILL_PAYABLE_ENTITY_RRAS">
+        <id name="uniqueId" type="big_decimal">
+            <column name="UNIQUE_ID" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="corporates" class="sampada.pojo.Corporates" fetch="select">
+            <column name="CORPORATE_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="entites" class="sampada.pojo.Entites" fetch="select">
+            <column name="ENTITY_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="weekId" type="big_decimal">
+            <column name="WEEK_ID" precision="22" scale="0" />
+        </property>
+        <property name="energyVae" type="big_decimal">
+            <column name="ENERGY_VAE" precision="20" scale="3" />
+        </property>
+        <property name="variableCharges" type="big_decimal">
+            <column name="VARIABLE_CHARGES" precision="20" />
+        </property>
+        <property name="netRras" type="big_decimal">
+            <column name="NET_RRAS" precision="20" />
+        </property>
+        <property name="billYear" type="big_decimal">
+            <column name="BILL_YEAR" precision="22" scale="0" />
+        </property>
+        <property name="revisionNo" type="big_decimal">
+            <column name="REVISION_NO" precision="22" scale="0" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="500" />
+        </property>
+        <property name="wrNetRras" type="big_decimal">
+            <column name="WR_NET_RRAS" precision="20" scale="0" />
+        </property>
+        <property name="billStatus" type="string">
+            <column name="BILL_STATUS" length="20" />
+        </property>
+        <property name="prevWrNetRras" type="big_decimal">
+            <column name="PREV_WR_NET_RRAS" precision="20" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

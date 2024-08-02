@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.PaymentInterestDisbursement" table="PAYMENT_INTEREST_DISBURSEMENT">
+        <id name="slno" type="big_decimal">
+            <column name="SLNO" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="disbursedInterestDetails" class="sampada.pojo.DisbursedInterestDetails" fetch="select">
+            <column name="DIS_INTERESTID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="interestAmount" type="big_decimal">
+            <column name="INTEREST_AMOUNT" precision="30" />
+        </property>
+        <property name="interestPaidamount" type="big_decimal">
+            <column name="INTEREST_PAIDAMOUNT" precision="30" />
+        </property>
+        <property name="interestPendingamount" type="big_decimal">
+            <column name="INTEREST_PENDINGAMOUNT" precision="30" />
+        </property>
+        <property name="interestPaiddate" type="date">
+            <column name="INTEREST_PAIDDATE" length="7" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7" />
+        </property>
+        <property name="checkerStatus" type="string">
+            <column name="CHECKER_STATUS" length="10" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="500" />
+        </property>
+        <property name="intPoolBal" type="big_decimal">
+            <column name="INT_POOL_BAL" precision="30" />
+        </property>
+        <property name="entryTime" type="timestamp">
+            <column name="ENTRY_TIME" />
+        </property>
+        <property name="intAgcBal" type="big_decimal">
+            <column name="INT_AGC_BAL" precision="30" />
+        </property>
+        <property name="intRrasBal" type="big_decimal">
+            <column name="INT_RRAS_BAL" precision="30" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

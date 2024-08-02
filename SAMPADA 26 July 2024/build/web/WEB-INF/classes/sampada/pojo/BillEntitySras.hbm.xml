@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 14, 2023 5:17:37 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.BillEntitySras" table="BILL_ENTITY_SRAS"  optimistic-lock="version">
+        <id name="uniqueId" type="big_decimal">
+            <column name="UNIQUE_ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="weekId" type="big_decimal">
+            <column name="WEEK_ID" precision="22" scale="0" />
+        </property>
+       <many-to-one name="corporates" class="sampada.pojo.Corporates" fetch="select">
+            <column name="CORPORATE_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="entites" class="sampada.pojo.Entites" fetch="select">
+            <column name="ENTITY_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="totalAgcUpdownMwh" type="big_decimal">
+            <column name="TOTAL_AGC_UPDOWN_MWH" precision="20" scale="3" />
+        </property>
+        <property name="totalAgcDownMwh" type="big_decimal">
+            <column name="TOTAL_AGC_DOWN_MWH" precision="20" scale="3" />
+        </property>
+        <property name="markupCharges" type="big_decimal">
+            <column name="MARKUP_CHARGES" precision="20" />
+        </property>
+        <property name="totalnetAgc" type="big_decimal">
+            <column name="TOTALNET_AGC" precision="20" />
+        </property>
+        <property name="agcEnergycharges" type="big_decimal">
+            <column name="AGC_ENERGYCHARGES" precision="20" />
+        </property>
+        <property name="totalcharges" type="big_decimal">
+            <column name="TOTALCHARGES" precision="20" />
+        </property>
+        <property name="payRecvflag" type="string">
+            <column name="PAY_RECVFLAG" length="20" />
+        </property>
+        <property name="billYear" type="big_decimal">
+            <column name="BILL_YEAR" precision="22" scale="0" />
+        </property>
+        <property name="billDueDate" type="date">
+            <column name="BILL_DUE_DATE" length="7" />
+        </property>
+        <property name="revisionNo" type="big_decimal">
+            <column name="REVISION_NO" precision="22" scale="0" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="250" />
+        </property>
+    </class>
+</hibernate-mapping>

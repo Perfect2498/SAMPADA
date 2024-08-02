@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.CsdfDetails" table="CSDF_DETAILS">
+        <id name="slno" type="big_decimal">
+            <column name="SLNO" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="csdfAmount" type="big_decimal">
+            <column name="CSDF_AMOUNT" precision="30" />
+        </property>
+        <property name="mainPoolBalance" type="big_decimal">
+            <column name="MAIN_POOL_BALANCE" precision="30" />
+        </property>
+        <property name="checkerStatus" type="string">
+            <column name="CHECKER_STATUS" length="10" />
+        </property>
+        <property name="csdfMonth" type="string">
+            <column name="CSDF_MONTH" length="20" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="1000" />
+        </property>
+        <property name="amtCategory" type="string">
+            <column name="AMT_CATEGORY" length="20" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7" />
+        </property>
+        <property name="csdfYear" type="big_decimal">
+            <column name="psdf_year" precision="10" />
+        </property>
+        <property name="entryTime" type="timestamp">
+            <column name="ENTRY_TIME" />
+        </property>
+          <property name="poolAgcBal" type="big_decimal">
+            <column name="POOL_AGC_BAL" precision="30" />
+        </property>
+        <property name="poolRrasBal" type="big_decimal">
+            <column name="POOL_RRAS_BAL" precision="30" />
+        </property>
+    </class>
+</hibernate-mapping>

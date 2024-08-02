@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.UserDetails" table="USER_DETAILS">
+        <id name="loginId" type="string">
+            <column name="LOGIN_ID" length="20" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="corporates" class="sampada.pojo.Corporates" fetch="select">
+            <column name="CORPORATE_ID" precision="5" scale="0" />
+        </many-to-one>
+        <property name="userType" type="string">
+            <column name="USER_TYPE" length="10" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="30" not-null="true" />
+        </property>
+        <property name="roleId" type="java.lang.Integer">
+            <column name="ROLE_ID" precision="5" scale="0" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="100" not-null="true" />
+        </property>
+        <property name="sname" type="string">
+            <column name="SNAME" length="20" />
+        </property>
+        <property name="designation" type="string">
+            <column name="DESIGNATION" length="50" />
+        </property>
+        <property name="phoneOffice" type="string">
+            <column name="PHONE_OFFICE" length="30" />
+        </property>
+        <property name="phoneResi" type="string">
+            <column name="PHONE_RESI" length="30" />
+        </property>
+        <property name="mobileNo" type="string">
+            <column name="MOBILE_NO" length="15" />
+        </property>
+        <property name="emailid" type="string">
+            <column name="EMAILID" length="40" />
+        </property>
+        <property name="fax" type="string">
+            <column name="FAX" length="30" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" />
+        </property>
+        <property name="validity" type="char">
+            <column name="VALIDITY" length="1" not-null="true" />
+        </property>
+        <property name="locked" type="char">
+            <column name="LOCKED" length="1" not-null="true" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="50" />
+        </property>
+        <set name="tempMappingBillBanks" table="TEMP_MAPPING_BILL_BANK" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOGIN_ID" length="20" />
+            </key>
+            <one-to-many class="sampada.pojo.TempMappingBillBank" />
+        </set>
+        <set name="bankStatements" table="BANK_STATEMENT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOGIN_ID" length="20" />
+            </key>
+            <one-to-many class="sampada.pojo.BankStatement" />
+        </set>
+        <set name="tempRefundBillCorps" table="TEMP_REFUND_BILL_CORP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOGINID" length="20" />
+            </key>
+            <one-to-many class="sampada.pojo.TempRefundBillCorp" />
+        </set>
+        <set name="mappingBillBanks" table="MAPPING_BILL_BANK" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LOGIN_ID" length="20" />
+            </key>
+            <one-to-many class="sampada.pojo.MappingBillBank" />
+        </set>
+    </class>
+</hibernate-mapping>

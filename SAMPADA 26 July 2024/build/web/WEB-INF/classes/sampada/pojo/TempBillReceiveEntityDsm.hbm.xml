@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.TempBillReceiveEntityDsm" table="TEMP_BILL_RECEIVE_ENTITY_DSM">
+        <id name="uniqueId" type="big_decimal">
+            <column name="UNIQUE_ID" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="corporates" class="sampada.pojo.Corporates" fetch="select">
+            <column name="CORPORATE_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="entites" class="sampada.pojo.Entites" fetch="select">
+            <column name="ENTITY_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="weekId" type="big_decimal">
+            <column name="WEEK_ID" precision="22" scale="0" />
+        </property>
+        <property name="cappingCharges" type="big_decimal">
+            <column name="CAPPING_CHARGES" precision="20" />
+        </property>
+        <property name="additionalCharges" type="big_decimal">
+            <column name="ADDITIONAL_CHARGES" precision="20" />
+        </property>
+        <property name="signCharges" type="big_decimal">
+            <column name="SIGN_CHARGES" precision="20" />
+        </property>
+        <property name="recvCharges" type="big_decimal">
+            <column name="RECV_CHARGES" precision="20" />
+        </property>
+        <property name="netDsm" type="big_decimal">
+            <column name="NET_DSM" precision="20" />
+        </property>
+        <property name="billYear" type="big_decimal">
+            <column name="BILL_YEAR" precision="22" scale="0" />
+        </property>
+        <property name="revisionNo" type="big_decimal">
+            <column name="REVISION_NO" precision="22" scale="0" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="500" />
+        </property>
+        <property name="wrNetDsm" type="big_decimal">
+            <column name="WR_NET_DSM" precision="20" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

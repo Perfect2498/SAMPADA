@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.Documents" table="DOCUMENTS">
+        <id name="documentNo" type="string">
+            <column name="DOCUMENT_NO" length="25" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="500" />
+        </property>
+        <property name="filename" type="string">
+            <column name="FILENAME" length="250" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="20" />
+        </property>
+        <property name="filesize" type="string">
+            <column name="FILESIZE" length="20" />
+        </property>
+        <property name="filetype" type="string">
+            <column name="FILETYPE" length="10" />
+        </property>
+        <property name="uploadDateByMaker" type="date">
+            <column name="UPLOAD_DATE_BY_MAKER" length="7" />
+        </property>
+        <property name="checkDateByChecker" type="date">
+            <column name="CHECK_DATE_BY_CHECKER" length="7" />
+        </property>
+        <property name="documentSetNo" type="string">
+            <column name="DOCUMENT_SET_NO" length="25" />
+        </property>
+    </class>
+</hibernate-mapping>

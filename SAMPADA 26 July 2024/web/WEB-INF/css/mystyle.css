@@ -1,0 +1,179 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 5, 2016, 10:49:03 AM
+    Author     : jagan
+*/
+ body {
+            font: 400 15px Kaushan Script,Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+            width:100%;
+          }
+          
+          
+        .customerTable table{ 
+                border: 2px solid DarkOrange;
+                border-radius: 13px; 
+                border-spacing: 0;
+            }
+             .customerTable  th { 
+                border: 2px solid  #964000;
+                padding: 10px; 
+                background-color: #964000;
+                color:white;
+                
+            }
+            .customerTable  td 
+            { 
+                border: 2px solid DarkOrange;
+                padding: 10px; 
+                background-color: #FBF2EA;
+              
+            }
+           .customerTable thead,tr, td {
+                color:#003366;
+            }
+            
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+      #customers tr:hover {background-color: #ddd;}
+
+      #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4682B4;
+        color: white;
+      }
+
+        .billprocessbtn {              
+               background-color: #603311;
+               color: white;
+               padding: 16px 20px;
+               border: none;
+               cursor: pointer;
+               width: 150px;
+               opacity: 0.9;
+               font-family:  Kaushan Script ,sans-serif;
+             }
+
+             .billprocessbtn:hover {
+               /*opacity: 1;#3e8e41*/
+              color:yellow ; 
+             }
+          .active,.billprocessbtn:hover {
+            background-color: #603311;
+            color: white;
+        }   
+        
+          .payprocessbtn {              
+               background-color: #603311;
+               color: white;
+               padding: 16px 20px;
+               border: none;
+               cursor: pointer;
+               width: 150px;
+               opacity: 0.9;
+               font-family:  Kaushan Script ,sans-serif;
+             }
+
+             .payprocessbtn:hover {
+               /*opacity: 1;#3e8e41*/
+              color:yellow ; 
+             }
+          .active,.payprocessbtn:hover {
+            background-color: #603311;
+            color: white;
+        }   
+        
+        
+          .btn {              
+               background-color: #2D4159;
+               color: white;
+               padding: 16px 20px;
+               border: none;
+               cursor: pointer;
+               width: 150px;
+               opacity: 0.9;
+               font-family:  Kaushan Script ,sans-serif;
+             }
+
+             .btn:hover {
+               /*opacity: 1;#3e8e41*/
+              color:yellow ; 
+             }
+            
+/*              .btn{
+               background-color: #603311;
+               color: #FBF1E9;
+           }*/
+           .dropbtn {
+               background-color: #603311;
+               color: #FBF1E9;
+               padding: 5px;
+               /*                padding: 10px 13px;*/
+               font-size: 12px;
+               border: none;
+               width:150px;
+               cursor: pointer;
+           }
+           .dropdown {
+               position: relative;
+               display: inline-block;
+           }
+           .dropdown-content {
+               display: none;
+               position: absolute;
+               background-color: #FFA812;
+               min-width: 150px;
+               min-height: 30px;
+               box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+               z-index: 1;
+           }
+           .dropdown-content a {
+               color: #603311;
+               text-decoration: none;
+               display: block;
+               height:35px;
+               background-color: #FFA812;
+           }
+           .dropdown-content a:hover {background-color: #603311;
+                                      color: #FFA812;}
+           .dropdown:hover .dropdown-content {
+               display: block;
+           }
+           .dropdown:hover .dropbtn {
+               background-color: #603311;
+           }
+           .active, .btn:hover {
+               color:#FBF1E9;
+               background-color: #603311;
+           }
+
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #CC9752;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}  
+
+

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 4, 2021 2:25:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sampada.pojo.LetterOfCredit" table="LETTER_OF_CREDIT">
+        <id name="lcId" type="big_decimal">
+            <column name="LC_ID" precision="22" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="defaultLocDetails" class="sampada.pojo.DefaultLocDetails" fetch="select">
+            <column name="DEFAULT_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="lcFromdate" type="date">
+            <column name="LC_FROMDATE" length="7" />
+        </property>
+        <property name="lcTodate" type="date">
+            <column name="LC_TODATE" length="7" />
+        </property>
+        <property name="constituent" type="string">
+            <column name="CONSTITUENT" length="50" />
+        </property>
+        <property name="lastFyAvg" type="string">
+            <column name="LAST_FY_AVG" length="50" />
+        </property>
+        <property name="lcCondition" type="big_decimal">
+            <column name="LC_CONDITION" precision="22" scale="0" />
+        </property>
+        <property name="lcIssueBank" type="string">
+            <column name="LC_ISSUE_BANK" length="50" />
+        </property>
+        <property name="lcIssueBranch" type="string">
+            <column name="LC_ISSUE_BRANCH" length="50" />
+        </property>
+        <property name="lcAmount" type="string">
+            <column name="LC_AMOUNT" length="50" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="500" />
+        </property>
+        <property name="finYear" type="string">
+            <column name="FIN_YEAR" length="50" />
+        </property>
+        <property name="entryDate" type="date">
+            <column name="ENTRY_DATE" length="7" />
+        </property>
+        <property name="expFlag" type="big_decimal">
+            <column name="EXP_FLAG" precision="22" scale="0" />
+        </property>
+        <property name="fileName" type="string">
+            <column name="FILE_NAME" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>
